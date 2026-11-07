@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Химчистка «CASTO» — Химчистка мебели с выездом</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --accent: #10b981;
+      --accent-dark: #059669;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --radius: 16px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.5;
+      padding-bottom: 90px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Top Demo Notice */
+    .demo-bar {
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 11px;
+      text-align: center;
+      padding: 6px 12px;
+      font-weight: 600;
+      border-bottom: 1px solid #fde68a;
+    }
+
+    /* Header */
+    header {
+      padding: 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-box {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid #a7f3d0;
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Hero */
+    .hero {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      margin-top: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .hero h1 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .stars { color: #f59e0b; }
+
+    /* CTA Buttons */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+    }
+    .btn-primary:active { background: var(--primary-dark); }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #ffffff;
+      margin-top: 10px;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    /* Estimate Banner */
+    .photo-estimate {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .photo-estimate h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .photo-estimate p { font-size: 13px; opacity: 0.9; margin-bottom: 14px; }
+    .btn-white {
+      background: #ffffff;
+      color: var(--primary-dark);
+      font-size: 14px;
+      padding: 12px;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 28px 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Price Cards */
+    .price-list { display: flex; flex-direction: column; gap: 10px; }
+    .price-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .price-name { font-weight: 600; font-size: 14px; color: var(--dark); }
+    .price-sub { font-size: 12px; color: var(--gray); }
+    .price-val { font-weight: 800; font-size: 16px; color: var(--accent-dark); white-space: nowrap; }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .feat-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .feat-icon { font-size: 22px; margin-bottom: 6px; }
+    .feat-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+    .feat-desc { font-size: 11px; color: var(--gray); line-height: 1.35; }
+
+    /* Location & Hours */
+    .info-box {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 16px;
+      border: 1px solid var(--border);
+      margin-top: 16px;
+      font-size: 13px;
+    }
+    .info-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .info-row:last-child { margin-bottom: 0; }
+
+    /* Floating Bottom Action Bar */
+    .floating-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      padding: 12px 16px;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+      border-top: 1px solid var(--border);
+    }
+    .btn-half {
+      flex: 1;
+      padding: 12px 10px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: #94a3b8;
+      padding: 24px 16px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-bar">
+    ⚠️ Демо-версия сайта для ознакомления владельцем • Разработано для Химчистка «CASTO»
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="logo-box">
+        ✨ Химчистка «CASTO»
+      </div>
+      <div class="status-badge">
+        <span class="dot"></span>
+        Принимаем заявки
+      </div>
+    </header>
+
+    <div class="hero">
+      <h1>Химчистка мебели и ковров в г. Москве с выездом на дом</h1>
+      <p class="hero-subtitle">Удалим въевшиеся пятна, пылевых клещей и запахи за 1 час. Безопасно для детей и домашних питомцев.</p>
+      
+      <div class="rating-row">
+        <span class="stars">★★★★★</span>
+        <span>4.8 на картах (68+ отзывов)</span>
+      </div>
+
+      <a href="tel:+79250410555" class="btn btn-primary">
+        📞 Позвонить мастеру
+      </a>
+      <a href="https://wa.me/79250410555?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%85%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B8%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8%20%28%D0%A5%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0%20%C2%ABCASTO%C2%BB%29." class="btn btn-whatsapp">
+        💬 Оценить стоимость по фото
+      </a>
+    </div>
+
+    <div class="photo-estimate">
+      <h3>Не знаете точную цену?</h3>
+      <p>Сфотографируйте мебель и пришлите в WhatsApp. Мастер назовет точную цену и время за 2 минуты!</p>
+      <a href="https://wa.me/79250410555?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%85%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B8%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8%20%28%D0%A5%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0%20%C2%ABCASTO%C2%BB%29." class="btn btn-white">
+        Отправить фото дивана
+      </a>
+    </div>
+
+    <div class="section-title">
+      Честные цены на услуги
+    </div>
+    <div class="price-list">
+      <div class="price-card">
+        <div>
+          <div class="price-name">Прямой диван (2-3 места)</div>
+          <div class="price-sub">Глубокая экстракторная чистка</div>
+        </div>
+        <div class="price-val">от 1 800 ₽</div>
+      </div>
+      <div class="price-card">
+        <div>
+          <div class="price-name">Угловой диван</div>
+          <div class="price-sub">Включая спальное место и подушки</div>
+        </div>
+        <div class="price-val">от 2 600 ₽</div>
+      </div>
+      <div class="price-card">
+        <div>
+          <div class="price-name">Ортопедический матрас</div>
+          <div class="price-sub">С 2 сторон + антибактериальная сушка</div>
+        </div>
+        <div class="price-val">от 1 500 ₽</div>
+      </div>
+      <div class="price-card">
+        <div>
+          <div class="price-name">Кресло / Офисные стулья</div>
+          <div class="price-sub">Удаление засаленности и разводов</div>
+        </div>
+        <div class="price-val">от 450 ₽</div>
+      </div>
+      <div class="price-card">
+        <div>
+          <div class="price-name">Ковры и ковролин</div>
+          <div class="price-sub">За 1 кв. метр на дому</div>
+        </div>
+        <div class="price-val">от 250 ₽/м²</div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      Почему клиенты выбирают нас
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🧪</div>
+        <div class="feat-title">Эко-химия</div>
+        <div class="feat-desc">Немецкие средства без резкого запаха. Безопасно для аллергиков и котят.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💨</div>
+        <div class="feat-title">Быстрое высыхание</div>
+        <div class="feat-desc">Мебель готова к использованию уже через 2–3 часа после процедуры.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🚗</div>
+        <div class="feat-title">Бесплатный выезд</div>
+        <div class="feat-desc">Мастер приедет с оборудованием в любой район города без доплат.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🤝</div>
+        <div class="feat-title">Оплата за результат</div>
+        <div class="feat-desc">Никаких предоплат. Вы проверяете чистоту мебели и только потом платите.</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-row">
+        <span>📍</span>
+        <div><strong>Район работы:</strong> Выезд во все районы Москвы и Подмосковья</div>
+      </div>
+      <div class="info-row">
+        <span>🕒</span>
+        <div><strong>Режим работы:</strong> Ежедневно: 09:00 – 21:00 (выезд без выходных)</div>
+      </div>
+      <div class="info-row">
+        <span>📱</span>
+        <div><strong>Телефон для связи:</strong> <a href="tel:+79250410555" style="color:var(--primary);text-decoration:none;">+7 (925) 041-05-55</a></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Химчистка «CASTO». Демо-страница разработана для презентации бизнеса.</p>
+      <p>Не является публичной офертой. Удалим по первой просьбе владельца.</p>
+    </footer>
+  </div>
+
+  <!-- Floating action bar for smartphones -->
+  <div class="floating-bar">
+    <a href="tel:+79250410555" class="btn btn-primary btn-half">
+      📞 Позвонить
+    </a>
+    <a href="https://wa.me/79250410555?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%85%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B8%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8%20%28%D0%A5%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0%20%C2%ABCASTO%C2%BB%29." class="btn btn-whatsapp btn-half">
+      💬 WhatsApp
+    </a>
+  </div>
+
+</body>
+</html>
